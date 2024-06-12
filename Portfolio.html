@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <title>作品分類</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 新增的样式 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -240px; /* 初始状态隐藏在左侧 */
+            height: 100%;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+            padding: 20px;
+            overflow-y: auto; /* 如果内容超过高度，添加滚动条 */
+            transition: left 0.3s ease; /* 添加过渡效果 */
+            z-index: 100; /* 确保侧边栏在内容之上 */
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            margin-bottom: 20px; /* 新增：增加标题底部间距 */
+            margin-left: 40px; /* 调整标题位置 */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: #555;
+        }
+
+        /* 新增的样式 */
+        .toggle-sidebar {
+            position: fixed;
+            top: 20px;
+            left: 20px; /* 保持按钮位置不变 */
+            cursor: pointer;
+            z-index: 101; /* 确保在侧边栏之上 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="your-profile-picture.jpg" alt="Profile Picture">
+            <h1>陳以謙</h1>
+            <p>個人作品集</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-section">
+            <a href="index.html" class="nav-link">首頁</a>
+            <a href="index.html#about" class="nav-link">關於我</a>
+            <a href="index.html#contact" class="nav-link">聯繫我</a>
+        </div>
+    </nav>
+
+    <!-- 新增的侧边栏开关按钮 -->
+    <div class="toggle-sidebar" onclick="toggleSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1z"/>
+        </svg>
+    </div>
+
+    <!-- 新增的侧边栏 -->
+    <div class="sidebar" id="sidebar">
+        <h2>作品分類索引</h2>
+        <ul>
+            <li><a href="#category1">作品分類 1</a></li>
+            <li><a href="#category2">作品分類 2</a></li>
+            <!-- 如果有更多作品分类，继续添加 -->
+        </ul>
+    </div>
+
+    <section class="portfolio container">
+        <div id="category1" class="portfolio-item">
+            <h2>作品分類 1</h2>
+            <p>這裡是第一個作品分類的詳細內容...</p>
+            <!-- 添加更多作品的内容 -->
+        </div>
+        <div id="category2" class="portfolio-item">
+            <h2>作品分類 2</h2>
+            <p>這裡是第二個作品分類的詳細內容...</p>
+            <!-- 添加更多作品的内容 -->
+        </div>
+    </section>
+
+    <script>
+        // JavaScript 函数来控制侧边栏的显示和隐藏
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-240px';
+            } else {
+                sidebar.style.left = '0px';
+            }
+        }
+    </script>
+</body>
+</html>

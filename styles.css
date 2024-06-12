@@ -10,6 +10,7 @@ body {
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
+    padding: 0 20px;
 }
 
 /* 头部样式 */
@@ -85,34 +86,23 @@ nav {
     background-color: #555;
 }
 
-/* 最新动态样式 */
-.latest-updates {
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 20px 0;
-}
-
-.dynamic-item {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-/* 关于我和联系我部分样式 */
-.about, .contact {
+/* 最新动态、关于我、联系我部分样式 */
+.latest-updates, .about, .contact {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: 20px 0;
     text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.about h2, .contact h2 {
+.latest-updates h2, .about h2, .contact h2 {
     margin-top: 0;
 }
 
+/* 表单样式 */
 .contact form {
     display: flex;
     flex-direction: column;
@@ -157,20 +147,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-
-/* 作品分类页面样式 */
-.portfolio {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
-
-.portfolio-item {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* 按钮动画效果 */
